@@ -3,9 +3,9 @@ from app.registry import DISPLAY_HANDLERS, PRINT_HANDLERS, SERIALIZE_HANDLERS
 
 class Book:
     def __init__(self, title: str, content: str) -> None:
-    self.title = title
-    self.content = content
-
+        self.title = title
+        self.content = content
+        
     def display(self, display_type: str) -> None:
         handler = DISPLAY_HANDLERS.get(display_type)
         if handler is None:
