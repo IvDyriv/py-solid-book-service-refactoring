@@ -1,5 +1,5 @@
 import json
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as element_tree
 
 
 def serialize_json(title: str, content: str) -> str:
@@ -7,9 +7,9 @@ def serialize_json(title: str, content: str) -> str:
 
 
 def serialize_xml(title: str, content: str) -> str:
-    root = ET.Element("book")
-    title_el = ET.SubElement(root, "title")
+    root = element_tree.Element("book")
+    title_el = element_tree.SubElement(root, "title")
     title_el.text = title
-    content_el = ET.SubElement(root, "content")
+    content_el = element_tree.SubElement(root, "content")
     content_el.text = content
     return ET.tostring(root, encoding="unicode")
